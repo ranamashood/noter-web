@@ -1,5 +1,7 @@
+import Content from "./components/layout/Content";
+
 function App() {
-  return <div>App</div>;
+  return <Content />;
 }
 
 export default App;
