@@ -9,16 +9,18 @@ interface Props {
 const Sidebar = (props: Props) => {
   const { notes, addNote } = props;
 
-  const addNoteHandler = () => {
-    addNote({
-      type: NotesActionKind.ADD,
-      payload: { title: "hello", details: "world" },
-    });
-  };
-
   return (
     <Wrapper>
-      <button onClick={addNoteHandler}>Add Note</button>
+      <button
+        onClick={() => {
+          addNote({
+            type: NotesActionKind.ADD,
+            payload: { title: "hello", details: "world" },
+          });
+        }}
+      >
+        Add Note
+      </button>
       <div>
         {notes.map((note) => (
           <div>

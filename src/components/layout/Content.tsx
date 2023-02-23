@@ -6,7 +6,9 @@ const reducer = (state: NoteInterface[], action: NotesAction) => {
   const { type, payload } = action;
   switch (type) {
     case NotesActionKind.ADD:
-      return [...state, payload];
+      if (payload.title !== "") {
+        return [...state, payload];
+      }
     default:
       return state;
   }
