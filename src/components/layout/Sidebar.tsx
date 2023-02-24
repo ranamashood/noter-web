@@ -22,8 +22,8 @@ const Sidebar = (props: Props) => {
         Add Note
       </button>
       <div>
-        {notes.map((note) => (
-          <div>
+        {notes.map((note, key) => (
+          <div key={key}>
             {note.title} - {note.details}
           </div>
         ))}
