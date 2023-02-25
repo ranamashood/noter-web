@@ -3,14 +3,15 @@ import styled, { css } from "styled-components";
 interface Props {
   value: string;
   label: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const TextInput = (props: Props) => {
-  const { value, label } = props;
+  const { value, label, onChange } = props;
 
   return (
     <Wrapper>
-      <Input type="text" value={value} />
+      <Input type="text" value={value} onChange={onChange} />
       <Span value={value}>{label}</Span>
     </Wrapper>
   );
@@ -18,7 +19,6 @@ const TextInput = (props: Props) => {
 
 const Wrapper = styled.div`
   position: relative;
-  margin-top: 100px;
 `;
 
 const Input = styled.input<{ value: string }>`
