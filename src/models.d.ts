@@ -16,6 +16,11 @@ export interface NoteInterface {
 
 declare module "styled-components" {
   export interface DefaultTheme {
+    colors: {
+      primary: string;
+      secondary: string;
+      tertiary: string;
+    };
     borderRadius: string;
   }
 }
